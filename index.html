@@ -18,7 +18,7 @@
             <div class="uk-responsive-height" style="padding: 24px">
                 <div class="uk-grid-match" uk-grid style="height: inherit">
                     <div class="uk-width-1-2">
-                        <a class="uk-card uk-card-default dr-card">
+                        <a id="EEC-card" class="uk-card uk-card-default dr-card">
                             <div class="uk-flex uk-flex-center uk-flex-middle">
                                 <img src="assets/img/EEC.png" class="uk-responsive-width uk-responsive-height">
                             </div>
@@ -27,7 +27,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="uk-width-1-2">
+                    <div id="IoT-card" class="uk-width-1-2">
                         <a class="uk-card uk-card-default dr-card">
                             <div class="uk-flex uk-flex-center uk-flex-middle">
                                 <img src="assets/img/IoT.png" class="uk-responsive-width uk-responsive-height">
@@ -40,5 +40,8 @@
                 </div>
             </div>
         </div>
+        <script>
+            require('./index.js');
+        </script>
     </body>
 </html>

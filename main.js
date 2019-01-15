@@ -32,3 +32,19 @@ app.on('activate', () => {
         createWindow();
     }
 });
+
+ipcMain.on('EEC', (event, arg) => {
+    win.loadURL(url.format({
+        pathname: path.join(__dirname, '/views/EEC.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
+});
+
+ipcMain.on('IoT', (event, arg) => {
+    win.loadURL(url.format({
+        pathname: path.join(__dirname, '/views/IoT.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
+});
