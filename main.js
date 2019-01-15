@@ -8,6 +8,8 @@ let win;
 function createWindow () {
     win = new BrowserWindow({ frame: true });
 
+    win.setFullScreen(true);
+
     win.loadURL(url.format({
         pathname: path.join(__dirname, '/index.html'),
         protocol: 'file:',
