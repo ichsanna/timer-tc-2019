@@ -7,11 +7,10 @@
     <!-- TODO : MAKE UIKIT LOCAL -->
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/css/uikit.min.css" />
+    <link rel="stylesheet" href="../assets/css/uikit.min.css" />
     <link rel="stylesheet" href="../assets/css/styles.css">
     <!-- UIkit JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/js/uikit-icons.min.js"></script>
     <title>Electrical Engineering Competition</title>
 </head>
 <body uk-height-viewport class="dr-background-eec">
@@ -23,7 +22,7 @@
     </div>
     <div class="uk-section-default uk-flex uk-flex-center uk-flex-middle" style="height: 30%;background: inherit">
         <span style="font-size: 3rem; padding-right: 25px" class="dr-transition">
-            <a id="home-button" href="../index.html" class="dr-button">
+            <a id="home-button" class="dr-button">
                <i class="fas fa-home"></i>
             </a>
         </span>
@@ -48,6 +47,8 @@
             </a>
         </span>
     </div>
-    <script src="../assets/js/EEC.js"></script>
+    <script>
+        require('./../EEC.js');
+    </script>
 </body>
 </html>

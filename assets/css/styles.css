@@ -24,3 +24,11 @@ body {
     color: #F5BA0D !important; 
     font-family: 'Quicksand', sans-serif !important;
 }
+
+.dr-button {
+    color: #F5BA0D;
+}
+
+.dr-button:hover {
+    color: #FF0000;
+}

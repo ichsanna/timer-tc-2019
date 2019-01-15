@@ -33,6 +33,7 @@ app.on('activate', () => {
     }
 });
 
+// Event Listener
 ipcMain.on('EEC', (event, arg) => {
     win.loadURL(url.format({
         pathname: path.join(__dirname, '/views/EEC.html'),
@@ -48,3 +49,11 @@ ipcMain.on('IoT', (event, arg) => {
         slashes: true
     }));
 });
+
+ipcMain.on('home', (event, arg) => {
+    win.loadURL(url.format({
+        pathname: path.join(__dirname, '/index.html'),
+        protocol: 'file:',
+        slashes: true
+    }))
+})
