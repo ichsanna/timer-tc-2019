@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:500');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:500|Roboto+Mono:500');
 
 html , body {
     height: 100%;
@@ -7,4 +7,20 @@ html , body {
 
 body {
     background-color: black;
+}
+
+.dr-card {
+    padding: 12px;
+    background-color: inherit;
+    text-decoration: none !important;
+}
+
+.dr-card img {
+    max-height: 200px;
+    margin-bottom: 25px;
+}
+
+.dr-card-title {
+    color: #F5BA0D !important; 
+    font-family: 'Quicksand', sans-serif !important;
 }
