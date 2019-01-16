@@ -14,9 +14,9 @@ homeButton.addEventListener('click', (element, event) => {
     ipcRenderer.send('home', '');
 });
 
-timeDisplay.innerText = '00:15:00';
+timeDisplay.innerText = '00:00:20';
 // Default Time
-let time = 9000;
+let time = 20000;
 
 // Dynamic Time
 let timerNow;
@@ -47,6 +47,17 @@ playButton.addEventListener('click', (element, event) => {
 
         timeString = timeString + moment.duration(time).seconds();
 
+        // if(moment.duration(time).miliseconds() < 100) {
+        //     timeString = timeString + '0';
+        // }
+
+        // if(moment.duration(time).miliseconds() < 10) {
+        //     timeString = timeString + '0';
+        // }
+
+        // timeString = timeString + moment.duration(time).miliseconds();
+        
+
         // if(moment.duration(time).milliseconds() < 1000) {
         //     timerString = timeString + '0';  
         // }
@@ -58,14 +69,12 @@ playButton.addEventListener('click', (element, event) => {
         // timeString = timeString + moment.duration(time).milliseconds();
 
         timeDisplay.innerText = timeString;
-
+        colorController(time);
         if(time === 0) {
             pauseButtonHolder.style.display = 'none';
             playButtonHolder.style.display = 'inline';
 
             clearInterval(timerNow);
-            time = 9000;
-            timeDisplay.innerText = '00:15:00';
         }
     }, 1000);
 });
@@ -76,3 +85,23 @@ pauseButton.addEventListener('click', (element, event) => {
 
     clearInterval(timerNow);
 });
+
+resetButton.addEventListener('click', (element, event) => {
+
+
+    clearInterval(timerNow);
+    // time = 20000;
+    // timeDisplay.innerText = '00:00:20'
+    // pauseButtonHolder.style.display = 'none';
+    // playButtonHolder.style.display = 'inline';
+
+    // colorController(time);
+});
+
+function colorController(time) {
+    if(moment.duration(time).seconds() > 10) {
+        timeDisplay.style.color = '#F5BA0D'
+    } else {
+        timeDisplay.style.color = '#FF0000'
+    }
+}
