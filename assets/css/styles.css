@@ -32,3 +32,8 @@ body {
 .dr-button:hover {
     color: #F08119;
 }
+
+.dr-modal-button {
+    background-color: #FF0000;
+    color: white;
+}

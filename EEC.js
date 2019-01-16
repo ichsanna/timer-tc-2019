@@ -1,14 +1,28 @@
 const ipcRenderer = require('electron').ipcRenderer;
 const moment = require('moment');
 
+/* == Component Initialization == */
+// Time Display
 let timeDisplay = document.getElementById('time-display');
+
+// Buttons
 let homeButton = document.getElementById('home-button');
 let resetButton = document.getElementById('reset-button');
 let editButton = document.getElementById('edit-button');
 let playButton = document.getElementById('play-button');
 let pauseButton = document.getElementById('pause-button');
+let resetConfirmButton = document.getElementById('button-reset-confirm');
+let editConfirmButton = document.getElementById('button-edit-confirm');
+
+// Holders
 let playButtonHolder = document.getElementById('play-button-holder');
 let pauseButtonHolder = document.getElementById('pause-button-holder');
+
+// Modals
+let modalResetTimer = document.getElementById('modal-reset-timer');
+let modalEditTimer = document.getElementById('modal-edit-timer');
+
+/* == Event Listener for the Buttons == */
 
 homeButton.addEventListener('click', (element, event) => {
     ipcRenderer.send('home', '');
@@ -47,27 +61,6 @@ playButton.addEventListener('click', (element, event) => {
 
         timeString = timeString + moment.duration(time).seconds();
 
-        // if(moment.duration(time).miliseconds() < 100) {
-        //     timeString = timeString + '0';
-        // }
-
-        // if(moment.duration(time).miliseconds() < 10) {
-        //     timeString = timeString + '0';
-        // }
-
-        // timeString = timeString + moment.duration(time).miliseconds();
-        
-
-        // if(moment.duration(time).milliseconds() < 1000) {
-        //     timerString = timeString + '0';  
-        // }
-
-        // if(moment.duration(time).milliseconds() < 100) {
-        //     timeString = timeString + '0';
-        // }
-
-        // timeString = timeString + moment.duration(time).milliseconds();
-
         timeDisplay.innerText = timeString;
         colorController(time);
         if(time === 0) {
@@ -89,7 +82,8 @@ pauseButton.addEventListener('click', (element, event) => {
 resetButton.addEventListener('click', (element, event) => {
 
 
-    clearInterval(timerNow);
+    // clearInterval(timerNow);
+    return UIkit.modal(modalResetTimer).show();
     // time = 20000;
     // timeDisplay.innerText = '00:00:20'
     // pauseButtonHolder.style.display = 'none';
@@ -98,6 +92,21 @@ resetButton.addEventListener('click', (element, event) => {
     // colorController(time);
 });
 
+resetConfirmButton.addEventListener('click', (element, event) => {
+    clearInterval(timerNow);
+    time = 20000;
+    timeDisplay.innerText = '00:00:20'
+    pauseButtonHolder.style.display = 'none';
+    playButtonHolder.style.display = 'inline';
+
+    colorController(time);
+});
+
+editButton.addEventListener('click', (element, event) => {
+    return UIkit.modal(modalEditTimer).show();
+});
+
+// Control the color appearance
 function colorController(time) {
     if(moment.duration(time).seconds() > 10) {
         timeDisplay.style.color = '#F5BA0D'
