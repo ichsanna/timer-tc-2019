@@ -14,6 +14,11 @@ let pauseButton = document.getElementById('pause-button');
 let resetConfirmButton = document.getElementById('button-reset-confirm');
 let editConfirmButton = document.getElementById('button-edit-confirm');
 
+// Inputs
+let editTimerHours = document.getElementById('edit-timer-hours').value;
+let editTimerMinutes = document.getElementById('edit-timer-minutes').value;
+let editTimerSeconds = document.getElementById('edit-timer-seconds').value;
+
 // Holders
 let playButtonHolder = document.getElementById('play-button-holder');
 let pauseButtonHolder = document.getElementById('pause-button-holder');

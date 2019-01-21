@@ -6,7 +6,7 @@ const ipcMain = require('electron').ipcMain;
 let win;
 
 function createWindow () {
-    win = new BrowserWindow({ frame: true });
+    win = new BrowserWindow({ frame: false });
 
     win.setFullScreen(true);
 
