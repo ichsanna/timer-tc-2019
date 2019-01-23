@@ -15,9 +15,9 @@ let resetConfirmButton = document.getElementById('button-reset-confirm');
 let editConfirmButton = document.getElementById('button-edit-confirm');
 
 // Inputs
-let editTimerHours = document.getElementById('edit-timer-hours').value;
-let editTimerMinutes = document.getElementById('edit-timer-minutes').value;
-let editTimerSeconds = document.getElementById('edit-timer-seconds').value;
+let editTimerHours = document.getElementById('edit-timer-hours');
+let editTimerMinutes = document.getElementById('edit-timer-minutes');
+let editTimerSeconds = document.getElementById('edit-timer-seconds');
 
 // Holders
 let playButtonHolder = document.getElementById('play-button-holder');
@@ -33,9 +33,9 @@ homeButton.addEventListener('click', (element, event) => {
     ipcRenderer.send('home', '');
 });
 
-timeDisplay.innerText = '00:00:20';
+timeDisplay.innerText = '00:15:00';
 // Default Time
-let time = 20000;
+let time = 900000;
 
 // Dynamic Time
 let timerNow;
@@ -99,8 +99,8 @@ resetButton.addEventListener('click', (element, event) => {
 
 resetConfirmButton.addEventListener('click', (element, event) => {
     clearInterval(timerNow);
-    time = 20000;
-    timeDisplay.innerText = '00:00:20'
+    time = 900000;
+    timeDisplay.innerText = '00:15:00'
     pauseButtonHolder.style.display = 'none';
     playButtonHolder.style.display = 'inline';
 
@@ -111,9 +111,55 @@ editButton.addEventListener('click', (element, event) => {
     return UIkit.modal(modalEditTimer).show();
 });
 
+editConfirmButton.addEventListener('click', () => {
+    let newTime = 0;
+
+    if (editTimerHours.value > 0){
+        newTime += parseInt(editTimerHours.value) * 3600 * 1000;
+    }
+
+    if (editTimerMinutes.value > 0) {
+        newTime += parseInt(editTimerMinutes.value) * 60 * 1000;
+    }
+
+    if (editTimerSeconds.value > 0) {
+        newTime += parseInt(editTimerSeconds.value) * 1000;
+    }
+
+    time = newTime;
+    colorController(time);
+    let timeString = '';
+
+    if(moment.duration(time).hours() < 10) {
+        timeString = timeString + '0';
+    }
+
+    timeString = timeString + moment.duration(time).hours() + ':';
+
+    if(moment.duration(time).minutes() < 10) {
+        timeString = timeString + '0';
+    }
+
+    timeString = timeString + moment.duration(time).minutes() + ':';
+
+    if(moment.duration(time).seconds() < 10) {
+        timeString = timeString + '0';
+    }
+
+    timeString = timeString + moment.duration(time).seconds();
+
+    timeDisplay.innerText = timeString;
+
+    
+
+    editTimerHours.value = '';
+    editTimerMinutes.value = '10';
+    editTimerSeconds.value = '';
+});
+
 // Control the color appearance
 function colorController(time) {
-    if(moment.duration(time).seconds() > 10) {
+    if(moment.duration(time).asSeconds() > 10) {
         timeDisplay.style.color = '#F5BA0D'
     } else {
         timeDisplay.style.color = '#FF0000'
