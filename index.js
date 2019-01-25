@@ -10,5 +10,5 @@ EECCard.addEventListener('click', (element, event) => {
 });
 
 IoTCard.addEventListener('click', (element, event) => {
-    ipcRenderer.send('IoT', '');
+    ipcRenderer.send('IoT-persiapan', '');
 });

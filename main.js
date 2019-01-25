@@ -36,21 +36,6 @@ app.on('activate', () => {
 });
 
 // Event Listener
-ipcMain.on('EEC', (event, arg) => {
-    win.loadURL(url.format({
-        pathname: path.join(__dirname, '/views/EEC.html'),
-        protocol: 'file:',
-        slashes: true
-    }));
-});
-
-ipcMain.on('IoT', (event, arg) => {
-    win.loadURL(url.format({
-        pathname: path.join(__dirname, '/views/IoT.html'),
-        protocol: 'file:',
-        slashes: true
-    }));
-});
 
 ipcMain.on('home', (event, arg) => {
     win.loadURL(url.format({
@@ -59,3 +44,37 @@ ipcMain.on('home', (event, arg) => {
         slashes: true
     }))
 })
+
+// EEC
+ipcMain.on('EEC', (event, arg) => {
+    win.loadURL(url.format({
+        pathname: path.join(__dirname, '/views/EEC.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
+});
+
+// IoT
+ipcMain.on('IoT-persiapan', (event, arg) => {
+    win.loadURL(url.format({
+        pathname: path.join(__dirname, '/views/IoT-Persiapan.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
+});
+
+ipcMain.on('IoT-tanya-jawab', (event, arg) => {
+    win.loadURL(url.format({
+        pathname: path.join(__dirname, '/views/IoT-TanyaJawab.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
+});
+
+ipcMain.on('IoT-presentasi', (event, arg) => {
+    win.loadURL(url.format({
+        pathname: path.join(__dirname, '/views/IoT-Presentasi.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
+});
