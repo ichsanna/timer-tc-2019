@@ -46,9 +46,49 @@ ipcMain.on('home', (event, arg) => {
 })
 
 // EEC
-ipcMain.on('EEC', (event, arg) => {
+ipcMain.on('EEC-semifinal1', (event, arg) => {
     win.loadURL(url.format({
-        pathname: path.join(__dirname, '/views/EEC.html'),
+        pathname: path.join(__dirname, '/views/EEC-Semifinal1.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
+});
+
+ipcMain.on('EEC-semifinal2', (event, arg) => {
+    win.loadURL(url.format({
+        pathname: path.join(__dirname, '/views/EEC-Semifinal2.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
+});
+
+ipcMain.on('EEC-pembuatan-alat', (event, arg) => {
+    win.loadURL(url.format({
+        pathname: path.join(__dirname, '/views/EEC-PembuatanAlat.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
+});
+
+ipcMain.on('EEC-pengujian', (event, arg) => {
+    win.loadURL(url.format({
+        pathname: path.join(__dirname, '/views/EEC-Pengujian.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
+});
+
+ipcMain.on('EEC-presentasi', (event, arg) => {
+    win.loadURL(url.format({
+        pathname: path.join(__dirname, '/views/EEC-Presentasi.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
+});
+
+ipcMain.on('EEC-tanya-jawab', (event, arg) => {
+    win.loadURL(url.format({
+        pathname: path.join(__dirname, '/views/EEC-TanyaJawab.html'),
         protocol: 'file:',
         slashes: true
     }));
@@ -63,17 +103,17 @@ ipcMain.on('IoT-persiapan', (event, arg) => {
     }));
 });
 
-ipcMain.on('IoT-tanya-jawab', (event, arg) => {
+ipcMain.on('IoT-presentasi', (event, arg) => {
     win.loadURL(url.format({
-        pathname: path.join(__dirname, '/views/IoT-TanyaJawab.html'),
+        pathname: path.join(__dirname, '/views/IoT-Presentasi.html'),
         protocol: 'file:',
         slashes: true
     }));
 });
 
-ipcMain.on('IoT-presentasi', (event, arg) => {
+ipcMain.on('IoT-tanya-jawab', (event, arg) => {
     win.loadURL(url.format({
-        pathname: path.join(__dirname, '/views/IoT-Presentasi.html'),
+        pathname: path.join(__dirname, '/views/IoT-TanyaJawab.html'),
         protocol: 'file:',
         slashes: true
     }));
