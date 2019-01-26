@@ -58,7 +58,66 @@ body {
     color: #F08119;
 }
 
+.dr-modal-title {
+    font-family: "Nexa";
+}
+
 .dr-modal-button {
-    background-color: #FF0000;
+    flex: 1 1 auto;
+    /* margin: 10px;
+    padding: 30px; */
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
     color: white;
+   /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    font-family: "Nexa";
+    /* background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #F26B35 100%); */
+    background-image: -webkit-linear-gradient(left, #fda085 30%, #F26B35);
+}
+
+.dr-modal-button:hover {
+    background-position: right center;
+}
+
+.dr-cancel-button {
+    flex: 1 1 auto;
+    /* margin: 10px;
+    padding: 30px; */
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+   /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    font-family: "Nexa";
+    background-image: linear-gradient(to right, #2C5364 0%, #203A43 51%, #0F2027 100%);
+    /* background-image: -webkit-linear-gradient(left, #F7EB23 60%, ); */
+}
+
+.dr-cancel-button:hover {
+    background-position: right center;
+}
+
+.dr-reset-modal {
+    color: #FF0000 !important;
+}
+
+.dr-edit-input {
+    font-family: "Roboto Mono";
+}
+
+.dr-edit-input input {
+    margin: 0px 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
