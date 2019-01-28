@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "electron": "^4.0.1",
-    "howler": "^2.1.1",
-    "moment": "^2.23.0"
+    "howler": "^2.0.7",
+    "moment": "^2.23.0",
+    "soundjs": "^1.0.1"
   }
 }
