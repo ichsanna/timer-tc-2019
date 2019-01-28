@@ -92,12 +92,12 @@
             
                     <h2 class="uk-modal-title dr-modal-title">Edit Timer?</h2>
 
-                    <div class="uk-flex uk-flex-center">
-                        <input id="edit-timer-hours" class="uk-input uk-form-large uk-form-width-small" type="number" min="0" placeholder="hh" value="">
+                    <div class="uk-flex uk-flex-center dr-edit-input" style="background: inherit">
+                        <input id="edit-timer-hours" class="uk-input uk-form-large uk-form-width-small uk-text-center" type="number" min="0" max="23" maxlength="2"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); if (this.value > this.max) this.value = this.max;" placeholder="hh" value="">
                         <div><h1> : </h1></div>
-                        <input id="edit-timer-minutes" class="uk-input uk-form-large uk-form-width-small" type="number" min="0" max="59" placeholder="mm" value="10">
+                        <input id="edit-timer-minutes" class="uk-input uk-form-large uk-form-width-small uk-text-center" type="number" min="0" max="59" maxlength="2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); if (this.value > this.max) this.value = this.max;" placeholder="mm" value="">
                         <div><h1> : </h1></div>
-                        <input id="edit-timer-seconds" class="uk-input uk-form-large uk-form-width-small" type="number" min="0" max="59"  placeholder="dd" value="">
+                        <input id="edit-timer-seconds" class="uk-input uk-form-large uk-form-width-small uk-text-center" type="number" min="0" max="59" maxlength="2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); if (this.value > this.max) this.value = this.max;" placeholder="ss" value="">
                     </div>
 
                     <div class="uk-modal-footer uk-text-right">

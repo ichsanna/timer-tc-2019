@@ -86,7 +86,7 @@
             </div>
             <!-- == Edit Timer Modal == -->
             <div id="modal-edit-timer" class="uk-flex-top" uk-modal>
-                <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical" style="border: 10px solid green; background: black">
+                <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
             
                     <button class="uk-modal-close-default" type="button" uk-close></button>
             
@@ -95,7 +95,7 @@
                     <div class="uk-flex uk-flex-center dr-edit-input" style="background: inherit">
                         <input id="edit-timer-hours" class="uk-input uk-form-large uk-form-width-small uk-text-center" type="number" min="0" max="23" maxlength="2"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); if (this.value > this.max) this.value = this.max;" placeholder="hh" value="">
                         <div><h1> : </h1></div>
-                        <input id="edit-timer-minutes" class="uk-input uk-form-large uk-form-width-small uk-text-center" type="number" min="0" max="59" maxlength="2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); if (this.value > this.max) this.value = this.max;" placeholder="mm" value="10">
+                        <input id="edit-timer-minutes" class="uk-input uk-form-large uk-form-width-small uk-text-center" type="number" min="0" max="59" maxlength="2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); if (this.value > this.max) this.value = this.max;" placeholder="mm" value="">
                         <div><h1> : </h1></div>
                         <input id="edit-timer-seconds" class="uk-input uk-form-large uk-form-width-small uk-text-center" type="number" min="0" max="59" maxlength="2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); if (this.value > this.max) this.value = this.max;" placeholder="ss" value="">
                     </div>

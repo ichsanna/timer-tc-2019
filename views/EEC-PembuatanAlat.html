@@ -19,13 +19,13 @@
         <div class="uk-section-default uk-flex uk-flex-center uk-flex-top" style="height: 20%; background: inherit">
             <span style="font-size: 3rem; padding-right: 25px;" class="dr-transition">
                 <a id="before-button" class="dr-button" style="color: #F7EB23">
-                <i class="fas fa-angle-left"></i>
+                <i class="fas fa-caret-left"></i>
                 </a>
             </span>
             <div class="uk-text-center uk-text-uppercase dr-subtitle dr-gradient">Pembuatan Alat</div>
             <span style="font-size: 3rem; padding-left: 25px" class="dr-transition">
                 <a id="next-button" class="dr-button" style="color: #F26B35">
-                <i class="fas fa-angle-right"></i>
+                <i class="fas fa-caret-right"></i>
                 </a>
             </span>
         </div>    
@@ -76,10 +76,10 @@
             
                     <button class="uk-modal-close-default" type="button" uk-close></button>
             
-                    <h2 class="uk-modal-title">Reset Timer?</h2>
+                    <h2 class="uk-modal-title dr-modal-title dr-reset-modal">Reset Timer?</h2>
                     <div class="uk-modal-footer uk-text-right">
                         <button id="button-reset-confirm" class="uk-button dr-modal-button uk-modal-close" type="button">Reset</button>
-                        <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                        <button class="uk-button uk-modal-close dr-cancel-button" type="button">Cancel</button>
                     </div>
             
                 </div>
@@ -90,19 +90,19 @@
             
                     <button class="uk-modal-close-default" type="button" uk-close></button>
             
-                    <h2 class="uk-modal-title">Edit Timer?</h2>
+                    <h2 class="uk-modal-title dr-modal-title">Edit Timer?</h2>
 
-                    <div class="uk-flex uk-flex-center">
-                        <input id="edit-timer-hours" class="uk-input uk-form-large uk-form-width-small" type="number" min="0" placeholder="hh" value="">
+                    <div class="uk-flex uk-flex-center dr-edit-input" style="background: inherit">
+                        <input id="edit-timer-hours" class="uk-input uk-form-large uk-form-width-small uk-text-center" type="number" min="0" max="23" maxlength="2"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); if (this.value > this.max) this.value = this.max;" placeholder="hh" value="">
                         <div><h1> : </h1></div>
-                        <input id="edit-timer-minutes" class="uk-input uk-form-large uk-form-width-small" type="number" min="0" max="59" placeholder="mm" value="10">
+                        <input id="edit-timer-minutes" class="uk-input uk-form-large uk-form-width-small uk-text-center" type="number" min="0" max="59" maxlength="2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); if (this.value > this.max) this.value = this.max;" placeholder="mm" value="">
                         <div><h1> : </h1></div>
-                        <input id="edit-timer-seconds" class="uk-input uk-form-large uk-form-width-small" type="number" min="0" max="59"  placeholder="dd" value="">
+                        <input id="edit-timer-seconds" class="uk-input uk-form-large uk-form-width-small uk-text-center" type="number" min="0" max="59" maxlength="2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); if (this.value > this.max) this.value = this.max;" placeholder="ss" value="">
                     </div>
 
-                    <div class="uk-modal-footer uk-text-right">
+                    <div class="uk-modal-footer uk-text-right" style="background: inherit">
                         <button id="button-edit-confirm" class="uk-button dr-modal-button uk-modal-close" type="button">Edit</button>
-                        <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                        <button class="uk-button uk-modal-close dr-cancel-button" type="button">Cancel</button>
                     </div>
             
                 </div>
