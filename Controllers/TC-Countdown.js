@@ -22,61 +22,49 @@ homeButton.addEventListener('click', (element, event) => {
     ipcRenderer.send('home', '');
 });
 
-let TCDay = moment('09-03-2019 00:07:00', 'DD-MM-YY HH:mm:ss').unix();
-let current = moment().unix();
+let TCDay = 1552089600000;
+let currentTime = Date.now();
 
-timeDisplay.innerText = '00:15:00';
-daysDisplay.innerText = '30';
-// Default Time
-let time = 900000;
+let differenceTime = TCDay - currentTime;
 
-// Dynamic Time
-let timerNow;
+let countDown = setInterval( () => {
+    differenceTime = differenceTime - 1000;
+    let timeString = '';
+    let dayString = '';
 
-playButton.addEventListener('click', (element, event) => {
-    // Prevent Negative Time
-    if (time === 0) {
-        resetTime();
-        colorController(time);
-    } else {
-        playButtonHolder.style.display = 'none';
-        pauseButtonHolder.style.display = 'inline';
-    
-        timerNow = setInterval( () => {
-            time = time - 1000;
-            let timeString = '';
+    if (Math.floor(moment.duration(differenceTime).asDays()) < 10) {
+        dayString = dayString + '0';
+    }
+      
+    dayString = dayString + Math.floor(moment.duration(differenceTime).asDays());
 
-            playAlert(time);
-              
-            if(moment.duration(time).hours() < 10) {
-                timeString = timeString + '0';
-            }
-    
-            timeString = timeString + moment.duration(time).hours() + ':';
-    
-            if(moment.duration(time).minutes() < 10) {
-                timeString = timeString + '0';
-            }
-    
-            timeString = timeString + moment.duration(time).minutes() + ':';
-    
-            if(moment.duration(time).seconds() < 10) {
-                timeString = timeString + '0';
-            }
-    
-            timeString = timeString + moment.duration(time).seconds();
-    
-            timeDisplay.innerText = timeString;
-            colorController(time);
-            if(time === 0) {
-                pauseButtonHolder.style.display = 'none';
-                playButtonHolder.style.display = 'inline';
-    
-                clearInterval(timerNow);
-            }
-        }, 1000);
-    } 
-});
+    if(moment.duration(differenceTime).hours() < 10) {
+        timeString = timeString + '0';
+    }
+
+    timeString = timeString + moment.duration(differenceTime).hours() + ':';
+
+    if(moment.duration(differenceTime).minutes() < 10) {
+        timeString = timeString + '0';
+    }
+
+    timeString = timeString + moment.duration(differenceTime).minutes() + ':';
+
+    if(moment.duration(differenceTime).seconds() < 10) {
+        timeString = timeString + '0';
+    }
+
+    timeString = timeString + moment.duration(differenceTime).seconds();
+
+    daysDisplay.innerText = dayString;
+    timeDisplay.innerText = timeString;
+
+    colorController(differenceTime);
+
+    if(differenceTime === 0) {
+        clearInterval(countDown);
+    }
+}, 1000);
 
 // Control the color appearance
 function colorController(time) {
