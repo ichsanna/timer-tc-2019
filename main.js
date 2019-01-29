@@ -118,3 +118,12 @@ ipcMain.on('IoT-tanya-jawab', (event, arg) => {
         slashes: true
     }));
 });
+
+// TC Countdown
+ipcMain.on('TC-countdown', (event, arg) => {
+    win.loadURL(url.format({
+        pathname: path.join(__dirname, '/views/TC-Countdown.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
+})
