@@ -22,10 +22,10 @@ homeButton.addEventListener('click', (element, event) => {
     ipcRenderer.send('home', '');
 });
 
-let TCDay = 1552089600000;
-let currentTime = Date.now();
+let TCDay = '2019-03-09T07:00:00+07:00';
+let currentTime = moment().format();
 
-let differenceTime = TCDay - currentTime;
+let differenceTime = moment(TCDay).diff(currentTime, "miliseconds");
 
 let countDown = setInterval( () => {
     differenceTime = differenceTime - 1000;
