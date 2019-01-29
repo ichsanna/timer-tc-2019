@@ -85,19 +85,15 @@ body {
 
 .dr-cancel-button {
     flex: 1 1 auto;
-    /* margin: 10px;
-    padding: 30px; */
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
     background-size: 200% auto;
     color: white;
-   /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
     font-family: "Nexa";
     background-image: linear-gradient(to right, #2C5364 0%, #203A43 51%, #0F2027 100%);
-    /* background-image: -webkit-linear-gradient(left, #F7EB23 60%, ); */
 }
 
 .dr-cancel-button:hover {
@@ -114,6 +110,12 @@ body {
 
 .dr-edit-input input {
     margin: 0px 10px;
+}
+
+
+  
+.dr-card-border:hover {
+    box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
 }
 
 input[type=number]::-webkit-inner-spin-button, 
