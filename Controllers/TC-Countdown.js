@@ -32,6 +32,8 @@ let countDown = setInterval( () => {
     let timeString = '';
     let dayString = '';
 
+    playAlert(differenceTime);
+
     if (Math.floor(moment.duration(differenceTime).asDays()) < 10) {
         dayString = dayString + '0';
     }
@@ -72,5 +74,12 @@ function colorController(time) {
         timeDisplay.style.color = '#F5BA0D'
     } else {
         timeDisplay.style.color = '#FF0000'
+    }
+}
+
+// Control the alert to ring
+function playAlert(time) {
+    if(moment.duration(time).asSeconds() === 60 || moment.duration(time).asSeconds() === 30 || moment.duration(time).asSeconds() === 10 || (moment.duration(time).asSeconds() <= 5 && moment.duration(time).asSeconds() > 0)) {
+        alert.play();
     }
 }
