@@ -2,7 +2,6 @@ const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const url = require('url');
 const ipcMain = require('electron').ipcMain;
-
 let win;
 
 function createWindow () {
@@ -45,82 +44,20 @@ ipcMain.on('home', (event, arg) => {
     }))
 })
 
-// EEC
-ipcMain.on('EEC-semifinal1', (event, arg) => {
+// Lomba
+ipcMain.on('TC-Lomba', (event, arg) => {
+	let lomba = arg;
     win.loadURL(url.format({
-        pathname: path.join(__dirname, '/views/EEC-Semifinal1.html'),
+        pathname: path.join(__dirname, '/views/TC-Lomba.html'),
         protocol: 'file:',
-        slashes: true
+        slashes: true,
+		search: arg
     }));
 });
 
-ipcMain.on('EEC-semifinal2', (event, arg) => {
-    win.loadURL(url.format({
-        pathname: path.join(__dirname, '/views/EEC-Semifinal2.html'),
-        protocol: 'file:',
-        slashes: true
-    }));
-});
-
-ipcMain.on('EEC-pembuatan-alat', (event, arg) => {
-    win.loadURL(url.format({
-        pathname: path.join(__dirname, '/views/EEC-PembuatanAlat.html'),
-        protocol: 'file:',
-        slashes: true
-    }));
-});
-
-ipcMain.on('EEC-pengujian', (event, arg) => {
-    win.loadURL(url.format({
-        pathname: path.join(__dirname, '/views/EEC-Pengujian.html'),
-        protocol: 'file:',
-        slashes: true
-    }));
-});
-
-ipcMain.on('EEC-presentasi', (event, arg) => {
-    win.loadURL(url.format({
-        pathname: path.join(__dirname, '/views/EEC-Presentasi.html'),
-        protocol: 'file:',
-        slashes: true
-    }));
-});
-
-ipcMain.on('EEC-tanya-jawab', (event, arg) => {
-    win.loadURL(url.format({
-        pathname: path.join(__dirname, '/views/EEC-TanyaJawab.html'),
-        protocol: 'file:',
-        slashes: true
-    }));
-});
-
-// IoT
-ipcMain.on('IoT-persiapan', (event, arg) => {
-    win.loadURL(url.format({
-        pathname: path.join(__dirname, '/views/IoT-Persiapan.html'),
-        protocol: 'file:',
-        slashes: true
-    }));
-});
-
-ipcMain.on('IoT-presentasi', (event, arg) => {
-    win.loadURL(url.format({
-        pathname: path.join(__dirname, '/views/IoT-Presentasi.html'),
-        protocol: 'file:',
-        slashes: true
-    }));
-});
-
-ipcMain.on('IoT-tanya-jawab', (event, arg) => {
-    win.loadURL(url.format({
-        pathname: path.join(__dirname, '/views/IoT-TanyaJawab.html'),
-        protocol: 'file:',
-        slashes: true
-    }));
-});
 
 // TC Countdown
-ipcMain.on('TC-countdown', (event, arg) => {
+ipcMain.on('TC-Countdown', (event, arg) => {
     win.loadURL(url.format({
         pathname: path.join(__dirname, '/views/TC-Countdown.html'),
         protocol: 'file:',
